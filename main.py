@@ -5,3 +5,4 @@ OwO CIT instructors are the best!
 
 UwU = 'UwU means unhappy without you.'
 OwO = 'Not UwU.'
+XD = 'old face lmao'
