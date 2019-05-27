@@ -2,7 +2,6 @@
 UwU CIT is so fun! 
 OwO CIT instructors are the best!
 """
-
 import funct
 
 UwU = 'UwU means unhappy without you.'
@@ -25,3 +24,11 @@ player = {
         "orgb1100": '',
     }
 }
+
+player['fname'] = funct.getfname()
+player['lname'] = funct.getlname()
+player['age'] = funct.getage()
+player['gender'] = funct.getgender()
+player['personality'] = funct.getpersonality()
+
+print(player)
