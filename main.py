@@ -4,10 +4,6 @@ OwO CIT instructors are the best!
 """
 import funct
 
-UwU = 'UwU means unhappy without you.'
-OwO = 'Not UwU.'
-XD = 'old face lmao'
-
 player = {
     "fname": '',
     "lname": '',
