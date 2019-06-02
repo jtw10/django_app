@@ -17,6 +17,13 @@ class Window(Frame):
         # fill space of root window
         self.pack(fill=BOTH, expand=1)
 
+        # background image
+        load = Image.open('main.png')
+        render = ImageTk.PhotoImage(load)
+        background_label = Label(root, image = render)
+        background_label.render = render
+        background_label.place(x = 0, y = 0, height = 720, width = 720)
+
         # creating menu instance
         menu = Menu(self.master)
         self.master.config(menu = menu)
@@ -34,7 +41,7 @@ class Window(Frame):
         edit = Menu(menu)
 
         # show image and text commands in edit menu
-        edit.add_command(label = 'Show Pretty Image', command = self.showImg)
+        edit.add_command(label = 'Show Image', command = self.showImg)
         edit.add_command(label = 'Show Text', command = self.showText)
 
         # add 'edit' to menu
@@ -57,7 +64,7 @@ class Window(Frame):
 
         # labels can be text or images
         img = Label(self, image = render)
-        img.imnage = render
+        img.image = render
         img.place(x = 0, y = 0)
 
     def showText(self):
@@ -68,7 +75,7 @@ class Window(Frame):
 root = Tk()
 
 # size of the window
-root.geometry("400x300")
+root.geometry("720x720")
 
 # create instance
 app = Window(root)
