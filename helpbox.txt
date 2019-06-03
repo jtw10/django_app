@@ -1,0 +1,9 @@
+Help documentation will go here.
+
+While lorem ipsum text looks like gibberish, it’s actually rooted in a real Latin work. It comes from Cicero’s 45 BC work “De finibus bonorum et malorum” (On the ends of good and evil), which is a look at ethics. The lorem ipsum text comes from sections 1.10.32 and 1.10.33.
+
+However, the common lorem ipsum text we use today is not proper Latin. Compared to Cicero’s work, our lorem ipsum text is complete gibberish. It’s had words added, removed, and changed that make it far from its initial form.
+
+Dr. Richard McClintock discovered the source of the text when searching for the rare Latin word “consectetur” in classical literature. His search turned up Cicero’s work.
+
+It’s unknown who made these modifications to the text, or exactly when, to make it the mess of words we know today. Sometime in the 1500s, an unknown printer scrambled words that have survived into the digital age.

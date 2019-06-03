@@ -1,8 +1,27 @@
 from tkinter import *
+from tkinter import messagebox
 from PIL import Image, ImageTk
 import sys
 import os
 import funct
+import functions
+
+player = {
+    "fname": '',
+    "lname": '',
+    "age": '',
+    "gender": '',
+    "personality": '',
+    "term1grades": {
+        "acit1420": '',
+        "acit1515": '',
+        "acit1620": '',
+        "acit1630": '',
+        "comm1116": '',
+        "math1310": '',
+        "orgb1100": '',
+    }
+}
 
 class Window(Frame):
 
@@ -26,9 +45,6 @@ class Window(Frame):
 
         # create file object
         file = Menu(menu)
-
-        # background image 
-        #FIXME: file.add_command(label = 'Load background', command = self.backgroundImg)
 
         # exit command in file menu
         file.add_command(label = 'Exit', command = self.client_exit)
@@ -84,6 +100,20 @@ class Window(Frame):
 # create root window - can add windows within windows
 root = Tk()
 
+def helpbox():
+    def goback():
+        h.destroy()
+    h = Canvas(maincanvas, width=720, height=720)
+    h.configure(background="#E1C699")
+    h.pack()
+    h.place(relx=0.5, rely=0.5, anchor=CENTER)    
+    back_button = Button(h, text = 'Go Back', command = goback, width = 10, activebackground = '#33B5E5')
+    back_button_window = h.create_window(1, 1, anchor = 'nw', window = back_button)
+    helpfile = open('helpbox.txt', 'r')
+    x = helpfile.read()
+    h.create_text(100, 100, fill="darkblue", font="Times 20 italic bold", text = x)
+
+
 # background image for root window
 loadbackground = Image.open('main.png')
 maincanvas = Canvas(root, width = 720, height = 720)
@@ -93,11 +123,15 @@ maincanvas.create_image(125, 125, image = tk_img)
 quit_button = Button(root, text = 'Quit', command = root.quit, width = 10, activebackground = '#33B5E5')
 quit_button_window = maincanvas.create_window(10, 690, anchor = 'nw', window = quit_button)
 
-quit_button = Button(root, text = 'Help', command = root.quit, width = 10, activebackground = '#33B5E5')
-quit_button_window = maincanvas.create_window(100, 690, anchor = 'nw', window = quit_button)
+help_button = Button(root, text = 'Help', command = helpbox, width = 10, activebackground = '#33B5E5')
+help_button_window = maincanvas.create_window(100, 690, anchor = 'nw', window = help_button)
 
-quit_button = Button(root, text = 'Start', command = root.quit, width = 10, activebackground = '#33B5E5')
-quit_button_window = maincanvas.create_window(190, 690, anchor = 'nw', window = quit_button)
+start_button = Button(root, text = 'Start', command = functions.createprofile, width = 10, activebackground = '#33B5E5')
+start_button_window = maincanvas.create_window(190, 690, anchor = 'nw', window = start_button)
+
+
+
+
 
 
 # size of the window
@@ -105,11 +139,6 @@ root.geometry("720x720")
 
 # create instance
 app = Window(root)
-
-def UwUcallback():
-    os.system('main.py')
-b = Button(root, text = 'hello', command = UwUcallback)
-b.pack()
 
 # mainloop
 root.mainloop()
