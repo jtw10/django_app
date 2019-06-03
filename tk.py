@@ -128,9 +128,6 @@ def week0():
         goback()
 
 
-
-
-
 # background image for root window
 loadbackground = Image.open('images/main.png')
 maincanvas = Canvas(root, width = 720, height = 720)
@@ -148,10 +145,6 @@ profile_button_window = maincanvas.create_window(190, 690, anchor = 'nw', window
 
 start_button = Button(root, text = 'Start', command = week0, width = 10, activebackground = '#33B5E5')
 start_button_window = maincanvas.create_window(280, 690, anchor = 'nw', window = start_button)
-
-
-
-
 
 
 # size of the window
