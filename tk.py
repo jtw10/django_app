@@ -113,6 +113,23 @@ def helpbox():
     x = helpfile.read()
     h.create_text(100, 100, fill="darkblue", font="Times 20 italic bold", text = x)
 
+def week0():
+    def goback():
+        w.destroy()
+
+    w = Canvas(maincanvas, width=720, height=720)
+    w.configure(background="#E1C699")
+    w.pack()
+    w.place(relx=0.5, rely=0.5, anchor=CENTER)    
+    continue_button = Button(w, text = 'Continue', command = goback, width = 10, activebackground = '#33B5E5')
+    continue_button_window = w.create_window(1, 1, anchor = 'nw', window = continue_button)
+    if player['fname'] == '':
+        messagebox.showinfo("Hold up", "You should create your profile first!")
+        goback()
+
+
+
+
 
 # background image for root window
 loadbackground = Image.open('images/main.png')
@@ -126,8 +143,11 @@ quit_button_window = maincanvas.create_window(10, 690, anchor = 'nw', window = q
 help_button = Button(root, text = 'Help', command = helpbox, width = 10, activebackground = '#33B5E5')
 help_button_window = maincanvas.create_window(100, 690, anchor = 'nw', window = help_button)
 
-start_button = Button(root, text = 'Start', command = functions.createprofile, width = 10, activebackground = '#33B5E5')
-start_button_window = maincanvas.create_window(190, 690, anchor = 'nw', window = start_button)
+profile_button = Button(root, text = 'Profile', command = functions.createprofile, width = 10, activebackground = '#33B5E5')
+profile_button_window = maincanvas.create_window(190, 690, anchor = 'nw', window = profile_button)
+
+start_button = Button(root, text = 'Start', command = week0, width = 10, activebackground = '#33B5E5')
+start_button_window = maincanvas.create_window(280, 690, anchor = 'nw', window = start_button)
 
 
 
