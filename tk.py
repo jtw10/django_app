@@ -75,7 +75,7 @@ class Window(Frame):
     """
     # show image and text functions
     def showImg(self):
-        load = Image.open('owo.png')
+        load = Image.open('images/owo.png')
         render = ImageTk.PhotoImage(load)
 
         # labels can be text or images
@@ -85,7 +85,7 @@ class Window(Frame):
 
     # background image
     def backgroundImg(self):
-        load = Image.open('main.png')
+        load = Image.open('images/main.png')
         render = ImageTk.PhotoImage(load)
         background_label = Label(root, image = render)
         background_label.render = render
@@ -115,7 +115,7 @@ def helpbox():
 
 
 # background image for root window
-loadbackground = Image.open('main.png')
+loadbackground = Image.open('images/main.png')
 maincanvas = Canvas(root, width = 720, height = 720)
 maincanvas.pack()
 tk_img = ImageTk.PhotoImage(loadbackground)
