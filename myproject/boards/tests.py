@@ -50,7 +50,7 @@ class BoardTopicsTest(TestCase):
         response = self.client.get(board_topics_url)
 
         self.assertContains(response, 'href="{0}"'.format(homepage_url))
-        self.assertContains(response, 'href="{0}"'.format(new_topic_url))  
+        self.assertContains(response, 'href="{0}"'.format(new_topic_url))
 
 
 class HomeTests(TestCase):
