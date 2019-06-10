@@ -14,15 +14,15 @@
                         <button type="submit" class="btn btn-primary btn-block">Log In</button>
                     </form>
                 </div>
+                <div class="card-footer text-muted text-center">
+                        Don't have an account? <a href="{% url 'signup' %}">Sign Up</a>
+                </div>
             </div>
-            <div class="card-footer text-muted text-center">
-                Don't have an account? <a href="{% url 'signup' %}">Sign Up</a>
+            <div class="text-center py-2">
+                    <small>
+                        <a href="#" class="text-muted">Forgot Password?</a>
+                    </small>
             </div>
-        </div>
-        <div class="text-center py-2">
-            <small>
-                <a href="#" class="text-muted">Forgot Password?</a>
-            </small>
         </div>
     </div>
 {% endblock %}
