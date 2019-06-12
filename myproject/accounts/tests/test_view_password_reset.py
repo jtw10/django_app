@@ -10,7 +10,7 @@ from django.urls import resolve
 from django.test import TestCase
 
 
-class PasswordResetForm(TestCase):
+class PasswordResetTests(TestCase):
     def setUp(self):
         url = reverse('password_reset')
         self.response = self.client.get(url)
@@ -121,7 +121,7 @@ class InvalidPasswordResetConfirmTests(TestCase):
 
     def test_html(self):
         password_reset_url = reverse('password_reset')
-        self.assertContains(self.response, 'invalid password reset link')
+        self.assertContains(self.response, 'another password reset link')
         self.assertContains(self.response, 'href="{0}"'.format(password_reset_url))
 
 
