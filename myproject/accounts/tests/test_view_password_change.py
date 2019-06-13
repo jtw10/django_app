@@ -24,7 +24,7 @@ class PasswordChangeTestCase(TestCase):
 
 class SuccessfulPasswordChangeTests(PasswordChangeTestCase):
     def setUp(self):
-        super().setUp({
+        super(PasswordChangeTestCase, self).setUp({
             'old_password': 'no',
             'new_password1': 'yes',
             'new_password2': 'yes',
