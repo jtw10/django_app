@@ -64,7 +64,7 @@ class SuccessfulReplyTopicTests(ReplyTopicTestCase):
         # 2 total posts. one in ReplyTopicTestCase and one in this class
         self.assertEquals(Post.objects.count(), 2)
 
-    
+
 class InvalidReplyTopicTests(ReplyTopicTestCase):
     def setUp(self):
         # empty dictionary submission to 'reply_topic' view
