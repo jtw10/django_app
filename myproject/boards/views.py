@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import Http404
 from django.utils import timezone
 from django.utils.decorators import method_decorator
@@ -19,15 +20,18 @@ class BoardListView(ListView):
 
 def board_topics(request, pk):
     board = get_object_or_404(Board, pk=pk)
-    topics = board.topics.order_by('-last_updated').annotate(replies=Count('posts') - 1)
-    return render(request, 'topics.html', {'board': board, 'topics': topics})
-    """
+    queryset = board.topics.order_by('-last_updated').annotate(replies=Count('posts') - 1)
+    page = request.GET.get('page', 1)
+    paginator = Paginator(queryset, 20)
     try:
-        board = Board.objects.get(pk=pk)
-    except Board.DoesNotExist:
-        raise Http404
-    return render(request, 'topics.html', {'board': board})
-    """
+        topics = paginator.page(page)
+    except PageNotAnInteger:
+        # if page is not an integer, returns to page 1
+        topics = paginator.page(1)
+    except EmptyPage:
+        # if page is empty, return to last page
+        topics - paginator.page(paginator.num_pages)
+    return render(request, 'topics.html', {'board': board, 'topics': topics})
 
 
 @login_required
