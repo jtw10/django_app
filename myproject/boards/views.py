@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import Http404
 from django.utils import timezone
 from django.db.models import Count
-from django.views.generic import View, UpdateView
+from django.views.generic import UpdateView
 from .models import Board, Topic, Post
 from .forms import NewTopicForm, PostForm
 
@@ -70,22 +70,6 @@ def reply_topic(request, pk, topic_pk):
     else:
         form = PostForm()
     return render(request, 'reply_topic.html', {'topic': topic, 'form': form})
-
-
-class NewPostView(View):
-    def render(self, request):
-        return render(request, 'new_post.html', {'form': self.form})
-
-    def post(self, request):
-        form = PostForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('post_list')
-        return render(request, 'new_post.html', {'form': form})
-
-    def get(self, request):
-        form = PostForm()
-        return render(request, 'new_psot.html', {'form': form})
 
 
 class PostUpdateView(UpdateView):
