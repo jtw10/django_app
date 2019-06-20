@@ -27,7 +27,7 @@ class TopicListView(ListView):
 
     def get_context_data(self, **kwargs):
         kwargs['board'] = self.board
-        return super(TopicListView, self).get_context_data(**kwargs)
+        return super().get_context_data(**kwargs)
 
     def get_queryset(self):
         self.board = get_object_or_404(Board, pk=self.kwargs.get('pk'))
