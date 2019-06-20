@@ -18,19 +18,38 @@ class BoardListView(ListView):
     template_name = 'home.html'
 
 
-class TopicListVew(ListView):
+class TopicListView(ListView):
     model = Topic
     context_object_name = 'topics'
     template_name = 'topics.html'
     paginate_by = 20
+    queryset = ''
 
     def get_context_data(self, **kwargs):
         kwargs['board'] = self.board
-        return super(TopicListVew, self).get_context_data(**kwargs)
+        return super(TopicListView, self).get_context_data(**kwargs)
 
     def get_queryset(self):
         self.board = get_object_or_404(Board, pk=self.kwargs.get('pk'))
-        queryset = self.board.topics.order_by('-last_updated').annotate(seplies=Count('posts') - 1)
+        queryset = self.board.topics.order_by('-last_updated').annotate(replies=Count('posts') - 1)
+        return queryset
+
+
+class PostListView(ListView):
+    model = Post
+    context_object_name = 'posts'
+    template_name = 'topic_posts.html'
+    paginate_by = 5
+
+    def get_context_data(self, **kwargs):
+        self.topic.views += 1
+        self.topic.save()
+        kwargs['topic'] = self.topic
+        return super(PostListView, self).get_context_data(**kwargs)
+
+    def get_queryset(self):
+        self.topic = get_object_or_404(Topic, board__pk=self.kwargs.get('pk'), pk=self.kwargs.get('topic_pk'))
+        queryset = self.topic.posts.order_by('created_at')
         return queryset
 
 
@@ -46,7 +65,7 @@ def board_topics(request, pk):
         topics = paginator.page(1)
     except EmptyPage:
         # if page is empty, return to last page
-        topics - paginator.page(paginator.num_pages)
+        topics = paginator.page(paginator.num_pages)
     return render(request, 'topics.html', {'board': board, 'topics': topics})
 
 
