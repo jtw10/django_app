@@ -45,7 +45,7 @@ class PostListView(ListView):
         self.topic.views += 1
         self.topic.save()
         kwargs['topic'] = self.topic
-        return super(PostListView, self).get_context_data(**kwargs)
+        return super().get_context_data(**kwargs)
 
     def get_queryset(self):
         self.topic = get_object_or_404(Topic, board__pk=self.kwargs.get('pk'), pk=self.kwargs.get('topic_pk'))
@@ -107,6 +107,10 @@ def reply_topic(request, pk, topic_pk):
             post.topic = topic
             post.created_by = request.user
             post.save()
+
+            topic.last_updated = timezone.now()
+            topic.save()
+
             return redirect('topic_posts', pk=pk, topic_pk=topic_pk)
     else:
         form = PostForm()
