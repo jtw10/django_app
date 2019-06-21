@@ -4,6 +4,17 @@
 
 {% block title %}Post Reply{% endblock %}
 
+{% block stylesheet %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+{% endblock %}
+
+{% block javascript %}
+<script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+  <script>
+    var simplemde = new SimpleMDE();
+  </script>
+{% endblock %}
+
 {% block breadcrumb %}
     <li class="breadcrumb-item"><a href="{% url 'home' %}">Boards</a></li>
     <li class="breadcrumb-item"><a href="{% url 'board_topics' topic.board.pk %}">{{ topic.board.name }}</a></li>
@@ -30,9 +41,11 @@
                         <small class="text-muted">{{ post.created_at }}</small>
                     </div>
                 </div>
-                {{ post.message }}
+                {{ post.get_message_as_markdown }}
             </div>
         </div>
     {% endfor %}
+
+    {% include 'includes/pagination.html' %}
 
 {% endblock %}
