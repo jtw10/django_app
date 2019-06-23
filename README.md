@@ -8,3 +8,4 @@ TODO:
 
 2. fix list view for posts & pagination for posts
 
+3. baguetteBox not working on safari but working on chrome. debating between photo grid / carousel on home page 

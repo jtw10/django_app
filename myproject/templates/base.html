@@ -6,6 +6,8 @@
         <link href="https://fonts.googleapis.com/css?family=Noto+Sans+HK&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
         <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/baguetteBox.min.css' %}">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
         {% block stylesheet %}{% endblock %}
     </head>
     <body>
@@ -41,21 +43,21 @@
                 </div>
             </nav>
             <div class="container">
-                <div class="breadcrumb my-4 bg-dark">
-                    {% block lightbox %}
-                    {% endblock lightbox %}
-                </div>
-            <ol class="breadcrumb my-4">
-                {% block breadcrumb %}
-                {% endblock breadcrumb %}
-            </ol>
-            {% block content %}
-            {% endblock %}
+                <ol class="breadcrumb my-4">
+                    {% block breadcrumb %}
+                    {% endblock breadcrumb %}
+                </ol>
+                {% block content %}
+                {% endblock %}
             </div>
         {% endblock body %}
         <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
         <script src="{% static 'js/popper.min.js' %}"></script>
         <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/baguetteBox.min.js' %}"></script>
+        <script>
+            baguetteBox.run('.compact-gallery', { animation: 'In'});
+        </script>
         {% block javascript %}{% endblock %}
     </body>
 </html>
