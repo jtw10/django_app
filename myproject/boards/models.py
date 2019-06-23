@@ -17,7 +17,7 @@ class Board(models.Model):
         return Post.objects.filter(topic__board=self).count()
 
     def get_last_post(self):
-        return Post.objects.filter(topic__board=self).order_by('-created_at').first
+        return Post.objects.filter(topic__board=self).order_by('-created_at').first()
 
 
 class Topic(models.Model):
@@ -32,8 +32,8 @@ class Topic(models.Model):
 
     def get_page_count(self):
         count = self.posts.count()
-        pages = count / 20
-        return math.ceil(pages)
+        pages = int(math.floor(count / 20)) + 1
+        return pages
 
     def has_many_pages(self, count=None):
         if count is None:
@@ -41,8 +41,7 @@ class Topic(models.Model):
         return count > 6
 
     def get_page_range(self):
-        count = int(self.get_page_count()) + 1
-        print(count)
+        count = int(self.get_page_count())
         if self.has_many_pages(count):
             return range(1, 5)
         return range(1, count + 1)
