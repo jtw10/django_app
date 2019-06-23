@@ -46,7 +46,7 @@ class Topic(models.Model):
         if self.has_many_pages(count):
             return range(1, 5)
         return range(1, count + 1)
-    
+
     def get_last_ten_posts(self):
         return self.posts.order_by('-created_at')[:10]
 
