@@ -1,4 +1,4 @@
-# SchoolSim: A Recreation of the Post-Secondary Education Experience
+# Django Project
 
 FIXME: topic posts not showing up
 
