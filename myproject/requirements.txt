@@ -4,7 +4,6 @@ django-heroku==0.3.1
 django-widget-tweaks==1.4.5
 enum34==1.1.6
 future==0.17.1
-futures==3.2.0
 gax-google-logging-v2==0.8.3
 gax-google-pubsub-v1==0.8.3
 gcloud==0.18.3
