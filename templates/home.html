@@ -18,7 +18,7 @@
   </thead>
   <tbody>
     {% for board in boards %}
-    {% if board.pk == 1 or 2 %}
+    {% if board.id == 1 or 2 %}
     <tr>
       <td>
         <a href="{% url 'board_topics' board.pk %}">{{ board.name }}</a>
