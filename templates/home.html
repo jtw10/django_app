@@ -18,6 +18,7 @@
   </thead>
   <tbody>
     {% for board in boards %}
+    {% if board == 'Announcements' or 'Introductions' %}
     <tr>
       <td>
         <a href="{% url 'board_topics' board.pk %}">{{ board.name }}</a>
@@ -45,8 +46,12 @@
         {% endwith %}
       </td>
     </tr>
+    {% endif %}
     {% endfor %}
+  </tbody>
+  <tbody>
     {% for board in boards %}
+    {% if board == 'General Chat' or 'Feedback' %}
     <tr>
       <td>
         <a href="{% url 'board_topics' board.pk %}">{{ board.name }}</a>
@@ -74,6 +79,7 @@
         {% endwith %}
       </td>
     </tr>
+    {% endif %}
     {% endfor %}
   </tbody>
 </table>
