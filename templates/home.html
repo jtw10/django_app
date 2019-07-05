@@ -18,9 +18,7 @@
   </thead>
   <tbody>
     {% for board in boards %}
-      {% if board.id == 0 or 2 %}
-        {{ board.name }}
-      {% endif %}
+      {% if board.name == 'Announcements' or if board.name == 'Introduction' %}
         <tr>
           <td>
             <a href="{% url 'board_topics' board.pk %}">{{ board.name }}</a>
@@ -48,7 +46,7 @@
             {% endwith %}
           </td>
         </tr>
-
+      {% endif %}
     {% endfor %}
   </tbody>
   <tbody>
