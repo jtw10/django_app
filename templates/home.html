@@ -18,7 +18,6 @@
   </thead>
   <tbody>
     {% for board in boards %}
-    {{ board.get_posts_count + 1 }}
     {% if board.name == 'Announcements' or board.name == 'Introductions' %}
     <tr>
       <td>
@@ -26,7 +25,7 @@
         <small class="text-muted d-block">{{ board.description }}</small>
       </td>
       <td class="align-middle">
-        {{ board.get_posts_count }}
+        {{ board.get_post_count }}
       </td>
       <td class="align-middle">
         {{ board.topics.count }}
@@ -67,7 +66,7 @@
         <small class="text-muted d-block">{{ board.description }}</small>
       </td>
       <td class="align-middle">
-        {{ board.get_posts_count }}
+        {{ board.get_post_count }}
       </td>
       <td class="align-middle">
         {{ board.topics.count }}
