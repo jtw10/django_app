@@ -61,7 +61,7 @@
     </thead>
     <tbody>
       {% for board in boards %}
-        {% if board.name == 'General Chat' or board.name 'Feedback' %}
+        {% if board.name == 'General Chat' or board.name == 'Feedback' %}
           <tr>
             <td>
               <a href="{% url 'board_topics' board.pk %}">{{ board.name }}</a>
