@@ -12,6 +12,11 @@
 {% endblock %}
 
 {% block content %}
+{% if board.name != 'Announcements' %}
+<div class="mb-4">
+  <a href="{% url 'new_topic' board.pk %}" class="btn btn-primary">New Topic</a>
+</div>
+{% endif %}
 {% if board.name == 'Announcements' %}
 {% if user.is_superuser %}
 <div class="mb-4">
