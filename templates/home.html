@@ -19,7 +19,7 @@
     <tbody>
       {% for board in boards %}
       {{ board.get_posts_count }}
-      {{ board.objects.count() }}
+      {{ board.objects.count }}
         {% if board.name == 'Announcements' or board.name == 'Introductions' %}
           <tr>
             <td>
