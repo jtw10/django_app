@@ -10,7 +10,7 @@
   <table class="table">
     <thead class="thead-inverse">
       <tr>
-        <th>Board</th>
+        <th>Announcements & Introductions</th>
         <th>Posts</th>
         <th>Topics</th>
         <th>Last Post</th>
@@ -53,7 +53,7 @@
   <table class="table">
     <thead class="thead-inverse">
       <tr>
-        <th>Board</th>
+        <th>General Discussion</th>
         <th>Posts</th>
         <th>Topics</th>
         <th>Last Post</th>
@@ -61,7 +61,7 @@
     </thead>
     <tbody>
       {% for board in boards %}
-        {% if board.name == 'General Chat' or board.name == 'Feedback' %}
+        {% if board.name == 'Random Chat' or board.name == 'Project Feedback' %}
           <tr>
             <td>
               <a href="{% url 'board_topics' board.pk %}">{{ board.name }}</a>
