@@ -1,10 +1,11 @@
 html,
-body {
-  background-color: rgb(192, 187, 187);
+body,
+.container {
+  background-color: rgb(247, 247, 247);
 }
 
 .navbar-brand {
-  font-family: 'Noto Sans HK', sans-serif;
+  font-family: "Noto Sans HK", sans-serif;
 }
 
 .btn:focus,
@@ -85,7 +86,6 @@ button:active {
 }
 
 @media (min-width: 576px) {
-
   .gallery-block.compact-gallery .item .description {
     opacity: 0;
   }
@@ -102,8 +102,8 @@ button:active {
 
 .lightbox img {
   width: 100%;
-  transition: .2s ease-in-out;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, .2);
+  transition: 0.2s ease-in-out;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
   max-height: 198px;
   object-fit: cover;
 }
