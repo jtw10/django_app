@@ -1,16 +1,16 @@
 {% extends 'base.html' %}
 
-{% load static %}
+{% load humanize %}
 
 {% block breadcrumb %}
-<li class="breadcrumb-item active">Discussion Boards</li>
+<li class="breadcrumb-item active">Boards</li>
 {% endblock %}
 
 {% block content %}
 <table class="table">
   <thead class="thead-inverse">
     <tr>
-      <th>Board</th>
+      <th>Announcements & Introductions</th>
       <th>Posts</th>
       <th>Topics</th>
       <th>Last Post</th>
@@ -18,7 +18,7 @@
   </thead>
   <tbody>
     {% for board in boards %}
-    {% if board == 'Announcements' or 'Introductions' %}
+    {% if board.name == 'Announcements' or board.name == 'Introductions' %}
     <tr>
       <td>
         <a href="{% url 'board_topics' board.pk %}">{{ board.name }}</a>
@@ -35,7 +35,7 @@
         {% if post %}
         <small>
           <a href="{% url 'topic_posts' board.pk post.topic.pk %}">
-            By {{ post.created_by.username }} at {{ post.created_at }}
+            By {{ post.created_by.username }} {{ post.created_at|naturaltime }}
           </a>
         </small>
         {% else %}
@@ -49,9 +49,17 @@
     {% endif %}
     {% endfor %}
   </tbody>
+  <thead class="thead-inverse">
+    <tr>
+      <th>General Discussion</th>
+      <th>Posts</th>
+      <th>Topics</th>
+      <th>Last Post</th>
+    </tr>
+  </thead>
   <tbody>
     {% for board in boards %}
-    {% if board == 'General Chat' or 'Feedback' %}
+    {% if board.name == 'Random Chat' or board.name == 'Project Feedback' %}
     <tr>
       <td>
         <a href="{% url 'board_topics' board.pk %}">{{ board.name }}</a>
@@ -68,7 +76,7 @@
         {% if post %}
         <small>
           <a href="{% url 'topic_posts' board.pk post.topic.pk %}">
-            By {{ post.created_by.username }} at {{ post.created_at }}
+            By {{ post.created_by.username }} {{ post.created_at|naturaltime }}
           </a>
         </small>
         {% else %}
