@@ -12,8 +12,10 @@ a {
   color: rgb(130, 130, 170);
 }
 
-.navbar-brand {
+.navbar {
+  background-color: #8bc6f4;
   font-family: "Viga", Arial, sans-serif;
+  color: #075d9e;
 }
 
 .breadcrumb {
