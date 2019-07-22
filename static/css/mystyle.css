@@ -1,3 +1,8 @@
+html,
+body {
+  background-color: #033962;
+}
+
 .navbar-brand {
   font-family: "Noto Sans HK", sans-serif;
 }
