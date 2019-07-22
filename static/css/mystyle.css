@@ -1,10 +1,14 @@
+@import url("https://fonts.googleapis.com/css?family=Oxygen:300,400,700|Permanent+Marker|Viga&display=swap");
+
 html,
-body {
+body,
+.wrapper {
   background-color: #033962;
+  color: white;
 }
 
 .navbar-brand {
-  font-family: "Noto Sans HK", sans-serif;
+  font-family: "Oxygen", Arial, sans-serif;
 }
 
 .btn:focus,
