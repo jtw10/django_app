@@ -9,7 +9,7 @@ body,
 }
 
 a {
-  color: rgb(130, 130, 170);
+  color: rgb(7, 7, 46);
 }
 
 .navbar {
@@ -19,7 +19,7 @@ a {
 }
 
 .breadcrumb {
-  background-color: rgb(7, 7, 46);
+  background-color: rgb(130, 130, 170);
 }
 
 .btn:focus,
