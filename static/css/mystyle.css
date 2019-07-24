@@ -4,7 +4,7 @@ html,
 body,
 .wrapper {
   font-family: "Oxygen", Arial, sans-serif;
-  background-color: #033962;
+  background-color: rgb(130, 130, 170);
   color: white;
 }
 
@@ -19,7 +19,7 @@ a {
 }
 
 .breadcrumb {
-  background-color: rgb(130, 130, 170);
+  background-color: #033962;
 }
 
 .btn:focus,
