@@ -1,17 +1,24 @@
 @import url("https://fonts.googleapis.com/css?family=Oxygen:300,400,700|Permanent+Marker|Viga&display=swap");
 
+html {
+  min-height: 100%;
+}
+
 html,
-body,
-.wrapper {
+body {
   height: 100vh;
   width: 100vw;
   font-family: "Oxygen", Arial, sans-serif;
   background-color: #d8e8f4;
   color: #075d9e;
+  position: relative;
 }
 
 .wrapper {
-  height: 100%;
+  font-family: "Oxygen", Arial, sans-serif;
+  background-color: #d8e8f4;
+  color: #075d9e;
+  position: relative;
 }
 
 a {
