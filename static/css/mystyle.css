@@ -2,8 +2,8 @@
 
 html,
 body {
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
 }
 
 html,
@@ -12,6 +12,7 @@ body,
   font-family: "Oxygen", Arial, sans-serif;
   background-color: #d8e8f4;
   color: #075d9e;
+  height: 100%;
 }
 
 a {
