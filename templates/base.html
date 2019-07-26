@@ -16,7 +16,7 @@
 <body>
     {% block body %}
     <div class="wrapper">
-        <nav class="navbar navbar-expand-sm">
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
             <div class="container">
                 <a class="navbar-brand" href="{% url 'home' %}">Josh's Discussion Boards</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainMenu"
@@ -58,6 +58,9 @@
         </div>
     </div>
     {% endblock body %}
+    <div class="footer">
+      <div>Josh W © 2019 - All Rights Reserved</div>
+    </div>
     <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
     <script src="{% static 'js/popper.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
