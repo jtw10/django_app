@@ -16,8 +16,8 @@
 <body>
     {% block body %}
     <div class="wrapper">
-        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-            <div class="container">
+         <nav class="navbar navbar-expand-sm"> 
+             <div class="container">
                 <a class="navbar-brand" href="{% url 'home' %}">Josh's Discussion Boards</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainMenu"
                     aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,11 +56,11 @@
             {% block content %}
             {% endblock %}
         </div>
+        <div class="footer">
+            <div><a href="https://jtw10.github.io/NEW/">Josh W</a> © 2019 - All Rights Reserved</div>
+        </div>
     </div>
     {% endblock body %}
-    <div class="footer">
-      <div>Josh W © 2019 - All Rights Reserved</div>
-    </div>
     <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
     <script src="{% static 'js/popper.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
