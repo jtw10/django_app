@@ -4,8 +4,8 @@ html,
 body,
 .wrapper {
   font-family: "Oxygen", Arial, sans-serif;
-  background-color: rgb(130, 130, 170);
-  color: white;
+  background-color: #d8e8f4;
+  color: #075d9e;
 }
 
 a {
@@ -13,9 +13,9 @@ a {
 }
 
 .navbar {
-  background-color: #8bc6f4;
+  background-color: #033962;
   font-family: "Viga", Arial, sans-serif;
-  color: #075d9e;
+  color: #d8e8f4;
 }
 
 .breadcrumb {
