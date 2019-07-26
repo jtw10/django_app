@@ -1,5 +1,36 @@
-.navbar-brand {
-  font-family: "Noto Sans HK", sans-serif;
+@import url("https://fonts.googleapis.com/css?family=Oxygen:300,400,700|Permanent+Marker|Viga&display=swap");
+
+html,
+body,
+.wrapper {
+  font-family: "Oxygen", Arial, sans-serif;
+  background-color: #d8e8f4;
+  color: #075d9e;
+}
+
+a {
+  color: rgb(7, 7, 46);
+}
+
+.navbar {
+  background-color: #033962;
+  font-family: "Viga", Arial, sans-serif;
+  color: #d8e8f4;
+}
+
+.breadcrumb {
+  background-color: #033962;
+}
+
+.footer {
+  text-align: center;
+  font-size: 0.75em;
+  color: #dfdfdf;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#0d1363), to(#0c0624));
+  background-image: linear-gradient(#0d1363, #0c0624);
+  font-family: "Oxygen", Arial, sans-serif;
+  height: auto;
+  padding: 1%;
 }
 
 .btn:focus,
