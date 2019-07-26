@@ -14,7 +14,7 @@ body {
   background-color: #d8e8f4;
   color: #075d9e;
   position: relative;
-  min-height: calc(100% - 20px);
+  min-height: 100%;
 }
 
 a {
@@ -41,7 +41,8 @@ a {
   bottom: 0;
   width: 100%;
   height: 20px; 
-  position: absolute;
+  position: absolute;  
+  z-index: 3;
 }
 
 .btn:focus,
